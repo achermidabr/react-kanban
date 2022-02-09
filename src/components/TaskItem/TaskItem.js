@@ -33,12 +33,14 @@ export default function TaskItem({
 
   if (isEditing) {
     return (
-      <input
-        type="text"
-        value={editableTitle}
-        onChange={onTitleChange}
-        onKeyPress={onKeyPress}
-      />
+      <div className="task-item">
+        <input
+          type="text"
+          value={editableTitle}
+          onChange={onTitleChange}
+          onKeyPress={onKeyPress}
+        />
+      </div>
     );
   } else {
     return (
@@ -56,7 +58,7 @@ export default function TaskItem({
   }
 }
 
-TaskItem.PropTypes = {
+TaskItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   taskState: PropTypes.string.isRequired

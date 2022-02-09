@@ -2,6 +2,7 @@ import React from "react";
 import ProtTypes from "prop-types";
 import "./tasklist.css";
 import TaskItem from "../TaskItem/TaskItem";
+import plusIcon from "../../img/plus.png";
 
 export default function TaskList({
   title,
@@ -32,8 +33,15 @@ export default function TaskList({
             />
           );
         })}
+
+        {/* This line renders the right side of the && if left side is true. */}
+        {tasks.length === 0 && <div className="empty-list">Empty List</div>}
+
+        <button className="btn" onClick={addTask}>
+          <img src={plusIcon} alt="plus" />
+          Add Task
+        </button>
       </div>
-      <button onClick={addTask}>Add Task</button>
     </div>
   );
 }
