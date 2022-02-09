@@ -1,0 +1,14 @@
+.footer {
+  position: fixed;
+  padding: 8px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: left;
+}
+
+.footer a {
+  color: white;
+}

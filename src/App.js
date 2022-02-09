@@ -73,7 +73,7 @@ export default function App() {
           onTaskUpdate={updateTask}
           onDeleteTask={deleteTask}
         />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
