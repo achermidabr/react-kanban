@@ -3,10 +3,16 @@ import ProtTypes from "prop-types";
 import "./tasklist.css";
 import TaskItem from "../TaskItem/TaskItem";
 
-export default function TaskList({ title, onAddTask, tasks }) {
+export default function TaskList({
+  title,
+  taskState,
+  onAddTask,
+  tasks,
+  onTaskUpdate
+}) {
   const addTask = () => {
     console.log("Calling function in TaskList");
-    onAddTask("New Task!", "Pending");
+    onAddTask("New Task!", taskState);
   };
 
   return (
@@ -20,6 +26,7 @@ export default function TaskList({ title, onAddTask, tasks }) {
               id={task.id}
               title={task.title}
               taskState={task.state}
+              onTaskUpdate={onTaskUpdate}
             />
           );
         })}
@@ -32,5 +39,6 @@ export default function TaskList({ title, onAddTask, tasks }) {
 TaskList.propTypes = {
   title: ProtTypes.string.isRequired,
   onAddTask: ProtTypes.func.isRequired,
-  tasks: ProtTypes.array.isRequired
+  tasks: ProtTypes.array.isRequired,
+  taskState: ProtTypes.string.isRequired
 };
