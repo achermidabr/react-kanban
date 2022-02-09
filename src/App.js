@@ -1,6 +1,7 @@
 import "./styles.css";
 import "./components/Navbar/Navbar";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import TaskList from "./components/Tasklist/TaskList";
 import { useState } from "react";
 
@@ -72,6 +73,7 @@ export default function App() {
           onTaskUpdate={updateTask}
           onDeleteTask={deleteTask}
         />
+        {/* <Footer /> */}
       </div>
     </div>
   );
